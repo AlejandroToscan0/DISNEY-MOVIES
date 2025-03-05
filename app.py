@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
@@ -23,10 +23,12 @@ d1 = df[df["type"] == "TV Show"].copy()
 d2 = df[df["type"] == "Movie"].copy()
 
 
-# RUTA PRINCIPAL - MENÚ
+# 📌 RUTA PRINCIPAL - MENÚ CON TABLA
 @app.route('/')
 def index():
-    return render_template('index.html')
+    movies_table = d2[['title', 'type', 'rating', 'release_year']].head(10).to_html(classes="table table-striped", index=False)
+    tvshows_table = d1[['title', 'type', 'rating', 'release_year']].head(10).to_html(classes="table table-striped", index=False)
+    return render_template('index.html', movies_table=movies_table, tvshows_table=tvshows_table)
 
 
 # 📊 GRAFICO 1: Distribución de contenido (Movies vs TV Shows)

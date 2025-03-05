@@ -4,16 +4,66 @@
     <meta charset="UTF-8">
     <title>Disney+ Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            transition: 0.3s;
+            border-radius: 15px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+        }
+        table {
+            background: white;
+            color: black;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-<body class="container mt-4">
-    <h1 class="text-center">📊 Disney+ Dashboard</h1>
-    <p class="text-center">Selecciona un análisis para visualizar</p>
+<body>
+    <div class="container text-center">
+        <h1 class="mb-4">📊 Disney+ Dashboard</h1>
+        <p>Explora los datos de Disney+ con visualizaciones interactivas</p>
 
-    <div class="list-group">
-        <a href="/content_distribution" class="list-group-item list-group-item-action">Distribución de Contenido (Movies vs TV Shows)</a>
-        <a href="/content_by_year" class="list-group-item list-group-item-action">Contenido Agregado por Año</a>
-        <a href="/movie_duration" class="list-group-item list-group-item-action">Distribución de Duración de Películas</a>
-        <a href="/rating_distribution" class="list-group-item list-group-item-action">Distribución del Rating</a>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <a href="/content_distribution" class="card text-center p-4 bg-primary text-white">
+                    <h3>📺 Distribución de Contenido</h3>
+                </a>
+            </div>
+            <div class="col-md-6 mb-3">
+                <a href="/content_by_year" class="card text-center p-4 bg-success text-white">
+                    <h3>📆 Contenido por Año</h3>
+                </a>
+            </div>
+            <div class="col-md-6 mb-3">
+                <a href="/movie_duration" class="card text-center p-4 bg-warning text-dark">
+                    <h3>⏳ Duración de Películas</h3>
+                </a>
+            </div>
+            <div class="col-md-6 mb-3">
+                <a href="/rating_distribution" class="card text-center p-4 bg-danger text-white">
+                    <h3>⭐ Distribución de Ratings</h3>
+                </a>
+            </div>
+        </div>
+
+        <h2 class="mt-5">📽️ Primeras Películas</h2>
+        <div class="table-responsive">
+            {{ movies_table | safe }}
+        </div>
+
+        <h2 class="mt-5">📺 Primeros TV Shows</h2>
+        <div class="table-responsive">
+            {{ tvshows_table | safe }}
+        </div>
     </div>
 </body>
 </html>
