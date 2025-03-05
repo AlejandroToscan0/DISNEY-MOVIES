@@ -15,6 +15,7 @@
         .card {
             transition: 0.3s;
             border-radius: 15px;
+            padding: 20px;
         }
         .card:hover {
             transform: scale(1.05);
@@ -25,32 +26,49 @@
             color: black;
             border-radius: 10px;
         }
+        .btn-custom {
+            background: #ff9800;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: #e68900;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
     <div class="container text-center">
-        <h1 class="mb-4">📊 Disney+ Dashboard</h1>
-        <p>Explora los datos de Disney+ con visualizaciones interactivas</p>
+        <h1 class="mb-4">📊 Tabla Disney+</h1>
+        <p>Datos de Disney+</p>
 
         <div class="row">
             <div class="col-md-6 mb-3">
-                <a href="/content_distribution" class="card text-center p-4 bg-primary text-white">
+                <a href="/content_distribution" class="card text-center bg-primary text-white">
                     <h3>📺 Distribución de Contenido</h3>
                 </a>
             </div>
             <div class="col-md-6 mb-3">
-                <a href="/content_by_year" class="card text-center p-4 bg-success text-white">
+                <a href="/content_by_year" class="card text-center bg-success text-white">
                     <h3>📆 Contenido por Año</h3>
                 </a>
             </div>
             <div class="col-md-6 mb-3">
-                <a href="/movie_duration" class="card text-center p-4 bg-warning text-dark">
+                <a href="/movie_duration" class="card text-center bg-warning text-dark">
                     <h3>⏳ Duración de Películas</h3>
                 </a>
             </div>
             <div class="col-md-6 mb-3">
-                <a href="/rating_distribution" class="card text-center p-4 bg-danger text-white">
+                <a href="/rating_distribution" class="card text-center bg-danger text-white">
                     <h3>⭐ Distribución de Ratings</h3>
+                </a>
+            </div>
+            <div class="col-md-6 mb-3">
+                <a href="/content_by_country" class="card text-center bg-info text-white">
+                    <h3>🌍 Contenido por País</h3>
                 </a>
             </div>
         </div>

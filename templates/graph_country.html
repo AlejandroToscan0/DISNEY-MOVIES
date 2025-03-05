@@ -26,10 +26,6 @@
             transform: scale(1.02);
             box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
         }
-        h1 {
-            font-size: 2rem;
-            font-weight: bold;
-        }
         .btn-custom {
             background: #ff9800;
             border: none;
@@ -49,26 +45,15 @@
     <div class="container text-center">
         <h1 class="mb-4">{{ title }}</h1>
 
-        <!-- Si hay dos gráficos (Mapa y Barras) -->
-        {% if graph_map and graph_bars %}
-            <div class="card">
-                <h2 class="text-center">🌍 Mapa de Contenido por País</h2>
-                <div>{{ graph_map | safe }}</div>
-            </div>
+        <div class="card">
+            <h2 class="text-center">🌍 Mapa de Contenido por País</h2>
+            <div>{{ graph_map | safe }}</div>
+        </div>
 
-            <div class="card mt-4">
-                <h2 class="text-center">📊 Países con Más Contenido</h2>
-                <div>{{ graph_bars | safe }}</div>
-            </div>
-
-        <!-- Si hay solo un gráfico -->
-        {% else %}
-            <div class="card">
-                <div class="text-center">
-                    {{ graph | safe }}
-                </div>
-            </div>
-        {% endif %}
+        <div class="card mt-4">
+            <h2 class="text-center">📊 Países con Más Contenido</h2>
+            <div>{{ graph_bars | safe }}</div>
+        </div>
 
         <div class="mt-4">
             <a href="/" class="btn btn-custom">🏠 Volver al Inicio</a>
